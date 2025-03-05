@@ -1,0 +1,73 @@
+@import "tailwindcss";
+
+/* Variables */
+@theme {
+  --color-p-10: hsl(31, 80%, 10%);
+  --color-p-30: hsl(31, 80%, 30%);
+  --color-a-70: hsl(31, 80%, 70%);
+  --color-p-90: hsl(31, 80%, 90%);
+  --color-p-100: hsl(31, 80%, 100%);
+  --spacing-1080: 1080px;
+  --font-primary: "Noto Sans JP", serif;
+  --font-secondary: "Fira Sans", serif;
+  --h1: 600 3rem/1.2em var(--font-secondary);
+  --p: 1rem/1.5em var(--font-primary);
+  --h2: 600 2rem/1.2em var(--font-secondary);
+}
+/* Utilities */
+@layer utilities {
+  .font-h1 {
+    font: var(--h1);
+    @apply my-2;
+  }
+  .font-h2 {
+    font: var(--h2);
+    @apply my-2;
+  }
+  .font-p {
+    @apply my-2;
+  }
+}
+
+/* Global Styles */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    text-wrap: balance;
+    font: var(--p);
+    @apply bg-p-90 text-p-10;
+  }
+  h1 {
+    font: var(--h1);
+    @apply my-2;
+  }
+  h2 {
+    font: var(--h2);
+    @apply my-2;
+  }
+  p {
+    @apply my-2;
+  }
+  a {
+    @apply text-p-10 no-underline;
+  }
+  a:hover {
+    @apply text-p-30;
+  }
+  .btn,
+  button {
+    @apply inline-block my-2 bg-p-100 py-2 px-4 text-p-10 rounded-md border-b-4 border-a-70 cursor-pointer;
+  }
+  .btn:hover,
+  button:hover {
+    @apply bg-gradient-to-b from-p-100 to-p-90 transition duration-300 ease-in-out;
+  }
+  img {
+    @apply w-full;
+  }
+  section {
+    @apply w-11/12 max-w-1080 mx-auto;
+  }
+}
